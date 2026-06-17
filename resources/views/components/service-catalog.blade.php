@@ -2,7 +2,7 @@
     // Tu lógica de Section Blocking: respetando el orden cromático que decidiste para el scroll
     $categorySectionStyles = [
         'faciales' => [
-            'sectionBg' => 'bg-spa-primary', // Rompe perfecto el bg-spa-bg de Sobre Nosotros
+            'sectionBg' => 'bg-spa-muted', // Rompe perfecto el bg-spa-bg de Sobre Nosotros
             'badge' => 'bg-white/60 text-spa-dark border border-white/20',
             'priceColor' => 'text-spa-deep',
             'iconDot' => 'bg-spa-deep'
@@ -14,7 +14,7 @@
             'iconDot' => 'bg-spa-primary'
         ],
         'tratamientos' => [
-            'sectionBg' => 'bg-spa-primary', // Cierra el bloque con el rosa viejo corporativo
+            'sectionBg' => 'bg-spa-muted', // Cierra el bloque con el rosa viejo corporativo
             'badge' => 'bg-white/60 text-spa-dark border border-white/20',
             'priceColor' => 'text-spa-deep',
             'iconDot' => 'bg-spa-deep'
