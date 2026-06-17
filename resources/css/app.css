@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    /* paleta original */
+    --color-spa-bg: #EDE9E3;      /* Wishbone (Fondo suave) */
+    --color-spa-accent: #E7D7C9;  /* Pie Crust (Detalles crema) */
+    --color-spa-primary: #D4B2A7; /* Apple Pie (Rosa viejo de marca) */
+    --color-spa-muted: #CDC6C3;   /* Fine China (Bordes o gris alterno) */
+    --color-spa-dark: #4A3E3D;    /* Gravy (Texto café tierra suave) */
+    /* palete de contraste */
+    --color-spa-aqua: #A7CFD4;     /* Azul Aqua Pastel (Para frescura y faciales) */
+    --color-spa-mint: #A7D4BA;     /* Verde Menta Pastel (Para componentes dinámicos) */
+    --color-spa-deep: #2B5054;     /* Verde Océano Profundo (Para tipografías legibles y acentos potentes) */
+    --color-spa-peach: #f87171;     /* Durazno pastel */
+    --color-spa-pink: #f472b6;     /* Rosa pastel */
+    /* Fuentes del proyecto */
+    --font-sans-original: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji','Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+}
