@@ -26,11 +26,39 @@
             </div>
         </div>
 
-        <div class="relative mx-auto lg:mx-0 w-full max-w-md lg:max-w-none">
+       {{-- Contenedor de la Imagen con Slider Ligero en Alpine.js --}}
+        <div class="relative mx-auto lg:mx-0 w-full max-w-md lg:max-w-none"
+             x-data="{
+                 active: 0,
+                 images: [
+                     '{{ asset('images/header/header.webp') }}',
+                     '{{ asset('images/header/header2.webp') }}',
+                     '{{ asset('images/header/header3.webp') }}',
+                     '{{ asset('images/header/header5.webp') }}',
+                     '{{ asset('images/header/header6.webp') }}'
+                 ],
+                 init() {
+                     setInterval(() => {
+                         this.active = (this.active + 1) % this.images.length;
+                     }, 3000); {{-- Cambia de imagen cada 5 segundos --}}
+                 }
+             }">
+
+            {{-- Fondo decorativo estilizado con gradiente --}}
             <div class="absolute inset-0 bg-linear-to-tr from-spa-primary/20 to-spa-aqua/20 rounded-3xl transform rotate-2 scale-105"></div>
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80"
-                 alt="Masajes relajantes en León Gto - Soul Center"
-                 class="rounded-3xl shadow-2xl object-cover w-full h-112.5 relative z-10 border-4 border-white">
+
+            {{-- Contenedor de imágenes para aplicar el efecto Fade --}}
+            <div class="relative w-full h-112.5 rounded-3xl shadow-2xl overflow-hidden border-4 border-white z-10">
+                <template x-for="(img, index) in images" :key="index">
+                    <img :src="img"
+                         alt="Masajes relajantes en León Gto - Soul Center"
+                         class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out"
+                         :class="active === index ? 'opacity-100 z-10' : 'opacity-0 z-0'"
+                         x-cloak>
+                </template>
+            </div>
         </div>
+
+
     </div>
 </header>
