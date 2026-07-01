@@ -30,7 +30,15 @@ class AppointmentForm
                                     ->preload()
                                     ->required(),
 
-                                // 2. Filtro Reactivo de Categorías (Estilo v4 sin imports)
+                                // 2. Horario de la Cita
+                                DateTimePicker::make('appointment_date')
+                                    ->label('Fecha y Hora')
+                                    ->native(false)
+                                    ->displayFormat('d/m/Y g:i A')
+                                    ->minutesStep(15)
+                                    ->required(),
+
+                                // 3. Filtro Reactivo de Categorías (Estilo v4 sin imports)
                                 Select::make('category_id')
                                     ->label('Filtrar por Categoría (Opcional)')
                                     ->relationship('category', 'name')
@@ -41,14 +49,6 @@ class AppointmentForm
                                         $set('service_id', null);
                                         $set('employee_id', null); // Limpiamos también la asistente si cambian la categoría
                                     }),
-
-                                // 3. Horario de la Cita
-                                DateTimePicker::make('appointment_date')
-                                    ->label('Fecha y Hora')
-                                    ->native(false)
-                                    ->displayFormat('d/m/Y g:i A')
-                                    ->minutesStep(15)
-                                    ->required(),
 
                                 // 4. Selector del Servicio inteligente
                                 Select::make('service_id')

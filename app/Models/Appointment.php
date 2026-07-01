@@ -17,6 +17,7 @@ class Appointment extends Model
             'created_by',
             'payment_status',
             'amount_paid',
+            'google_event_id',
             'stripe_payment_id',
             'notes',
     ];
